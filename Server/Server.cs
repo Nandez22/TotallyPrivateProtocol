@@ -39,7 +39,7 @@ public class Server {
 
                     string? cause = null;
                     if(msg == null || !ValidateHeader(msg.Header, out cause)) {
-                        writer.WriteLine(JsonSerializer.Serialize(new { response = "invalid header", details = cause ?? "null" }));
+                        writer.WriteLine(JsonSerializer.Serialize(new { response = "Error", details = $"Invalid Header: {cause ?? "null"}" }));
                         break;
                     }
 
@@ -63,12 +63,12 @@ public class Server {
                             break;
                         
                         default:
-                            writer.WriteLine(JsonSerializer.Serialize(new { response = "error", details = "Unknown Command" }));
+                            writer.WriteLine(JsonSerializer.Serialize(new { response = "Error", details = $"Unknown Command: {msg.Command}" }));
                             break;
                     }
                 }
                 catch(JsonException e) {
-                    writer.WriteLine(JsonSerializer.Serialize(new { response = "error", details = e.Message }));
+                    writer.WriteLine(JsonSerializer.Serialize(new { response = "Error", details = e.Message }));
                 }
             }
         }
