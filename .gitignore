@@ -1,0 +1,48 @@
+# Rider IDE files
+.idea/
+*.sln.iml
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# Rider caches
+.idea/*/workspace.xml
+.idea/*/tasks.xml
+.idea/*/dictionaries
+.idea/*/shelf
+
+# Rider run configurations (if you want to ignore them, otherwise remove this)
+.idea/*/runConfigurations/
+
+# .NET Core / Visual Studio
+*.dotCover
+*.ncrunch*
+_ReSharper*/
+*.DotSettings.user
+.vscode/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# dotenv or secret files
+.env
